@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 56px;
+  margin: auto;
+  /* background-color: #202329; */
+  background-color: #f5f5f7;
+}
+
+.header ul {
+  width: 80vw;
+  overflow: hidden;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-content: center;
+}
+
+.header ul li {
+  margin: 0 20px;
+  /* border-bottom: 0 solid #8fd3f4; */
+  /* transform: ; */
+}
+
+.header ul li:hover {
+  /* margin: 0 20px; */
+  cursor: pointer;
+  color: #8fd3f4;
+  border-bottom: 2px solid #8fd3f4;
+}
