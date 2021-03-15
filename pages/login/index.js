@@ -1,10 +1,15 @@
+import loginStyle from '../../styles/Login.module.css'
+
 function Login(params) {
   console.log('paramd', params)
 
   return (
-    <>
-      <div>hello Login</div>
-    </>
+    <div className={loginStyle.login}>
+      <div>
+        <div>left</div>
+        <div>right</div>
+      </div>
+    </div>
   )
 }
 
