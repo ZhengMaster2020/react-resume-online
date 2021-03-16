@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import styles from '../styles/Home.module.css'
+import Cookies from 'js-cookie'
 
 const Home = () => {
   const router = useRouter()
