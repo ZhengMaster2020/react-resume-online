@@ -1,19 +1,33 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import MenuList from './components/MenuList'
+import { Avatar, Dropdown } from 'antd'
+
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import Cookies from 'js-cookie'
+import { useEffect, useState } from 'react'
+
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+const Home = () => {
   const router = useRouter()
+  const [name, setName] = useState('')
 
+  // 登录权限验证
   useEffect(() => {
-    !Cookies.get('auth') && router.push('login')
+    const auth = Cookies.get('auth')
+    if (!auth) return router.push('login')
+    const { username } = auth && JSON.parse(auth)
+    setName(username)
   })
 
   return (
     <div className={styles.container}>
+      <Dropdown overlay={MenuList}>
+        <Avatar size={40} className={styles.avatar}>
+          {`${name.split('')[0]}${name.split('')[1]}`}
+        </Avatar>
+      </Dropdown>
+
       <Head>
         <title>React Resume Online </title>
         <link rel="icon" href="/favicon.ico" />
@@ -75,3 +89,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home

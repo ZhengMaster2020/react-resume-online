@@ -22,13 +22,12 @@ export const Login = () => {
 
   // 表单验证通过后回调
   const onFinish = (values) => {
-    console.log('values,', values)
     setBtnLoaidng(true)
     setTimeout(() => {
       setBtnLoaidng(false)
       Cookies.set('auth', JSON.stringify(values))
       currentRouter.push('/')
-      message.success('登录成功！', 2000)
+      message.success('登录成功！')
     }, 500)
   }
 
@@ -38,6 +37,7 @@ export const Login = () => {
     <div className={loginStyle.login}>
       <div className={loginStyle.content}>
         <div className={loginStyle.left}>
+          <Input hidden />
           <Form
             {...layout}
             name="loginForm"
