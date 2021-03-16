@@ -1,4 +1,7 @@
 .login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -15,4 +18,57 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 40%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 427px;
+  height: 454px;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px 0 #e8e8e8;
+}
+
+.right {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 454px;
+  width: 60%;
+  overflow: hidden;
+}
+
+.carouselImg {
+  display: block;
+  width: 633px;
+  height: 454px;
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loginBtn {
+  width: 90px;
+  margin-left: 30px;
+}
+
+.loginBtn:first-child {
+  margin-left: 135px;
 }

@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import Cookies from 'js-cookie'
 import styles from '../styles/Home.module.css'
-import 'antd/dist/antd.css'
 
 export default function Home() {
   const router = useRouter()
