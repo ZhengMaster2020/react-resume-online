@@ -12,6 +12,9 @@ const handleMenuItemClick = ({ key: name }) => {
 // 头像下拉组件
 const MenuList = () => (
   <Menu onClick={handleMenuItemClick}>
+    <Menu.Item key="index">
+      <a href="/">首页</a>
+    </Menu.Item>
     <Menu.Item key="center">
       <a href="/resume">个人中心</a>
     </Menu.Item>
