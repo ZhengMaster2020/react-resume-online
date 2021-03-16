@@ -1,7 +1,6 @@
 import styles from '../../styles/Resume.module.css'
 import Cookies from 'js-cookie'
 import MenuList from '../components/MenuList'
-
 import ResumeDepot from '../components/ResumeDepot'
 import ResumeTemplDepot from '../components/ResumeTemplDepot'
 import TrashBin from '../components/TrashBin'
