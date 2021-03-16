@@ -3,8 +3,10 @@ import loginStyle, {
   loginBtn,
   btnWrap,
 } from '../../styles/Login.module.css'
-import { Button, Carousel, Image, Input, Form } from 'antd'
+import { Button, Carousel, Image, Input, Form, message } from 'antd'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
+import Cookies from 'js-cookie'
 
 const layout = {
   labelCol: { span: 8 },
@@ -14,14 +16,19 @@ const layout = {
 const rules = [{ required: true, message: '必填项不能为空' }]
 
 export const Login = () => {
+  const currentRouter = useRouter()
   const [btnLoading, setBtnLoaidng] = useState(false)
   const [loginForm] = Form.useForm()
 
+  // 表单验证通过后回调
   const onFinish = (values) => {
     console.log('values,', values)
     setBtnLoaidng(true)
     setTimeout(() => {
       setBtnLoaidng(false)
+      Cookies.set('auth', JSON.stringify(values))
+      currentRouter.push('/')
+      message.success('登录成功！', 2000)
     }, 500)
   }
 

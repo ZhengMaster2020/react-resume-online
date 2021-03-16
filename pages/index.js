@@ -9,7 +9,7 @@ export default function Home() {
   const router = useRouter()
 
   useEffect(() => {
-    !Cookies.get('Auth') && router.push('login')
+    !Cookies.get('auth') && router.push('login')
   })
 
   return (
