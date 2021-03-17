@@ -11,8 +11,10 @@
   
 }
 
-.ant-tabs-nav {
+
+.customTabs :global .ant-tabs-nav {
   background-color: #f5f5f7;
+  border-radius: 4px;
 }
 
 
@@ -23,3 +25,4 @@
   padding: 10px;
 
 }
+

@@ -3,6 +3,7 @@ import {
   tabWrap,
   tabPane,
   tabItem,
+  customTabs,
 } from '../../../styles/Depot.module.css'
 
 import { Tabs } from 'antd'
@@ -17,7 +18,7 @@ const ResumeDepot = () => {
   return (
     <div className={depot}>
       <div className={tabWrap}>
-        <Tabs tabPosition="left">
+        <Tabs tabPosition="left" className={customTabs}>
           <TabPane
             tab={
               <span>
@@ -26,6 +27,7 @@ const ResumeDepot = () => {
               </span>
             }
             key="1"
+            className={tabPane}
           >
             <div className={tabItem}>new Obj</div>
           </TabPane>
