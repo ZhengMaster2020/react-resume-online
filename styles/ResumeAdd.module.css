@@ -1,0 +1,47 @@
+.recommedWrap {
+  display: grid;
+  grid-template-columns: repeat(4, 240px);
+  grid-template-rows: repeat(auto-fill, 240px);
+  grid-gap: 20px;
+}
+
+.recommedItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 240px;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.recommedItemDesc {
+  color: #9c9c9c;
+  font-size: 14px;
+  margin-top: 14px;
+}
+
+.recommedItemTitle {
+  text-align: center;
+  padding: 0 22px;
+  line-height: 20px;
+  color: #3f3f3f;
+}
+
+.recommedItemText {
+  text-align: center;
+  padding: 0 22px;
+  line-height: 20px;
+}
+
+.recommedItemImg {
+  width: 72px;
+  height: 60px;
+}
+
+.recommedItemBtn {
+  display: grid;
+  grid-gap: 20px;
+}

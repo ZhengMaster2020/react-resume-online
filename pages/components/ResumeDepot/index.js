@@ -6,6 +6,8 @@ import {
   customTabs,
 } from '../../../styles/Depot.module.css'
 
+import ReusmeAdd from './components/ResumeAdd'
+
 import { Tabs } from 'antd'
 import {
   FolderOpenOutlined,
@@ -29,7 +31,9 @@ const ResumeDepot = () => {
             key="1"
             className={tabPane}
           >
-            <div className={tabItem}>new Obj</div>
+            <div className={tabItem}>
+              <ReusmeAdd />
+            </div>
           </TabPane>
           <TabPane
             tab={
