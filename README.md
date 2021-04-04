@@ -1,19 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 简历在线一键填写系统
 
-## Getting Started
+## 技术栈
 
-First, run the development server:
+- React
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Next
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Ant-Design
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 运行项目
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- 安装依赖
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+  ```bash
+  yarn
+  #or
+  npm i
+  ```
+
+- 启动该项目
+  ```bash
+    npm run dev
+    # or
+    yarn dev
+  ```

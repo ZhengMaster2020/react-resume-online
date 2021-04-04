@@ -1,5 +1,5 @@
-import { Button } from 'antd'
-import { useState } from 'react'
+import { Button } from "antd";
+import { useState } from "react";
 import {
   recommedWrap,
   recommedItem,
@@ -8,58 +8,27 @@ import {
   recommedItemTitle,
   recommedItemText,
   recommedItemBtn,
-} from '../../../../styles/ResumeAdd.module.css'
+} from "../../../../styles/ResumeAdd.module.css";
+import { tmplDataSource } from "../../../../mocks/add-resume.js";
+import ResumeReviewTmpl from "./ResumeReviewTmpl";
 
-const tmplDataSource = [
-  {
-    src: 'https://files.wondercv.com/cvsvuetpl-college.png',
-    title: '零经验实习1',
-    des: '学生找实习或全职工作，有一定实习经历的同学',
-    isShowBtn: true,
-    zhBtnType: 'default',
-    enBtnType: 'default',
-  },
-  {
-    src: 'https://files.wondercv.com/cvsvuetpl-college.png',
-    title: '零经验实习2',
-    des: '学生找实习或全职工作，有一定实习经历的同学',
-    isShowBtn: true,
-    zhBtnType: 'default',
-    enBtnType: 'default',
-  },
-  {
-    src: 'https://files.wondercv.com/cvsvuetpl-college.png',
-    title: '零经验实习3',
-    des: '学生找实习或全职工作，有一定实习经历的同学',
-    isShowBtn: true,
-    zhBtnType: 'default',
-    enBtnType: 'default',
-  },
-  {
-    src: 'https://files.wondercv.com/cvsvuetpl-college.png',
-    title: '零经验实习4',
-    des: '学生找实习或全职工作，有一定实习经历的同学',
-    isShowBtn: true,
-    zhBtnType: 'default',
-    enBtnType: 'default',
-  },
-]
-
-// 新建简历
+// 新建简历组件
 const ReusmeAdd = () => {
-  let [tmplDataArr, setIsMoveOver] = useState(tmplDataSource)
+  let [tmplDataArr, setIsMoveOver] = useState(tmplDataSource);
 
+  // 鼠标移入移出显示以及隐藏按钮模块
   const handleShowBtn = (idx, isShowBtn) => {
-    tmplDataSource[idx].isShowBtn = isShowBtn
-    setIsMoveOver(tmplDataSource.slice())
-  }
+    tmplDataSource[idx].isShowBtn = isShowBtn;
+    setIsMoveOver(JSON.parse(JSON.stringify(tmplDataSource)));
+  };
 
+  //    鼠标移入移出改变按钮类型模块
   const handleBtnBgColor = (options) => {
-    const { idx, zhBtnType, enBtnType } = options
-    tmplDataSource[idx].zhBtnType = zhBtnType
-    tmplDataSource[idx].enBtnType = enBtnType
-    setIsMoveOver(tmplDataSource.slice())
-  }
+    const { idx, zhBtnType, enBtnType } = options;
+    tmplDataSource[idx].zhBtnType = zhBtnType;
+    tmplDataSource[idx].enBtnType = enBtnType;
+    setIsMoveOver(JSON.parse(JSON.stringify(tmplDataSource)));
+  };
 
   // card模板组件
   const CardItem = () => {
@@ -74,7 +43,7 @@ const ReusmeAdd = () => {
           >
             <div
               className={recommedItem}
-              style={{ display: isShowBtn ? 'flex' : 'none' }}
+              style={{ display: isShowBtn ? "flex" : "none" }}
             >
               <img src={src} className={recommedItemImg} />
               <div className={recommedItemDesc}>
@@ -85,16 +54,16 @@ const ReusmeAdd = () => {
 
             <div
               className={recommedItemBtn}
-              style={{ display: isShowBtn ? 'none' : 'grid' }}
+              style={{ display: isShowBtn ? "none" : "grid" }}
             >
               <Button
                 danger
                 type={zhBtnType}
                 onMouseEnter={() =>
-                  handleBtnBgColor({ idx, enBtnType, zhBtnType: 'primary' })
+                  handleBtnBgColor({ idx, enBtnType, zhBtnType: "primary" })
                 }
                 onMouseLeave={() =>
-                  handleBtnBgColor({ idx, enBtnType, zhBtnType: 'default' })
+                  handleBtnBgColor({ idx, enBtnType, zhBtnType: "default" })
                 }
               >
                 中文模板
@@ -103,26 +72,27 @@ const ReusmeAdd = () => {
                 danger
                 type={enBtnType}
                 onMouseEnter={() =>
-                  handleBtnBgColor({ idx, zhBtnType, enBtnType: 'primary' })
+                  handleBtnBgColor({ idx, zhBtnType, enBtnType: "primary" })
                 }
                 onMouseLeave={() =>
-                  handleBtnBgColor({ idx, zhBtnType, enBtnType: 'default' })
+                  handleBtnBgColor({ idx, zhBtnType, enBtnType: "default" })
                 }
               >
                 英文模板
               </Button>
             </div>
           </div>
-        )
+        );
       }
-    )
-  }
+    );
+  };
 
   return (
     <div className={recommedWrap}>
       <CardItem />
+      <ResumeReviewTmpl />
     </div>
-  )
-}
+  );
+};
 
-export default ReusmeAdd
+export default ReusmeAdd;
