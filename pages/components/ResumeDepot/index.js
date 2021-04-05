@@ -7,6 +7,7 @@ import {
 } from '../../../styles/Depot.module.css'
 
 import ReusmeAdd from './components/ResumeAdd'
+import ResumeImport from './components/ResumeImport'
 
 import { Tabs } from 'antd'
 import {
@@ -14,6 +15,7 @@ import {
   UploadOutlined,
   PlusOutlined,
 } from '@ant-design/icons'
+
 const { TabPane } = Tabs
 
 const ResumeDepot = () => {
@@ -28,7 +30,7 @@ const ResumeDepot = () => {
                 新建简历
               </span>
             }
-            key="1"
+            key="add"
             className={tabPane}
           >
             <div className={tabItem}>
@@ -36,15 +38,15 @@ const ResumeDepot = () => {
             </div>
           </TabPane>
           <TabPane
+            key="import"
             tab={
               <span>
                 <UploadOutlined />
                 导入简历
               </span>
             }
-            key="2"
           >
-            Content of Tab 2
+            <ResumeImport />
           </TabPane>
           <TabPane
             tab={
@@ -53,7 +55,7 @@ const ResumeDepot = () => {
                 我的简历
               </span>
             }
-            key="3"
+            key="my"
           >
             Content of Tab 3
           </TabPane>
