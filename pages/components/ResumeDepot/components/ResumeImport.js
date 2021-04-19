@@ -26,6 +26,18 @@ const props = {
 }
 
 const ResumeImport = () => {
+  const handleImport = () => {
+    const params = {
+      method: 'POST',
+      body: JSON.stringify({ username: 'zhangsan', userId: '001' }),
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+    }
+    fetch('http://localhost:8888/upload', params)
+      .then((res) => res.json())
+      .then((data) => console.log('data,', data))
+      .catch((err) => console.log('err', err))
+  }
+
   return (
     <div className={resumeImport}>
       <div className={importDoc}>
@@ -40,7 +52,11 @@ const ResumeImport = () => {
             Support for a single or bulk upload. Strictly prohibit from
           </p>
         </Dragger>
-        <Button type="primary" style={{ marginTop: '20px' }}>
+        <Button
+          type="primary"
+          style={{ marginTop: '20px' }}
+          onClick={handleImport}
+        >
           上传简历
         </Button>
       </div>
